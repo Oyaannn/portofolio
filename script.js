@@ -50,8 +50,8 @@ const projects = [
         img: 'assets/project/portofolio.png',
         desc: 'Website portofolio pribadi yang dibuat untuk menampilkan profil, pengalaman, proyek, sertifikat, dan kontak dalam satu halaman.',
         stack: ['HTML', 'CSS', 'JavaScript'],
-        live: '#',
-        github: '#'
+        live: 'https://oyaannn.github.io/portofolio/',
+        github: 'https://github.com/Oyaannn/portofolio'
     }
 ];
 
