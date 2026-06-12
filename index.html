@@ -20,7 +20,7 @@
         <div class="nav-right">
             <ul class="nav-menu">
                 <li><a href="#about">About</a></li>
-                <li><a href="#project">Project</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experiences">Experiences</a></li>
                 <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -59,11 +59,10 @@
                 <h3>About Me</h3>
                 <h2>Muhammad Irpan Arroyan</h2>
                 <div class="underline"></div>
-                <p>Saya adalah Mahasiswa Teknik Informatika di Universitas Nusa Putra dengan minat besar dalam
-                    pengembangan website, pemrograman, dan desain UI/UX. Memiliki pengalaman dalam pengembangan aplikasi
-                    berbasis web melalui proyek akademik maupun pengalaman kerja. Terbiasa menggunakan HTML, CSS,
-                    JavaScript, Bootstrap, Laravel, WordPress, serta memahami pengembangan website responsif dan user
-                    friendly. Intinya ga rugi kalo hire saya suasana kantor jadi rame, rawr.</p>
+                <p>Saya adalah Mahasiswa Teknik Informatika di Universitas Nusa Putra dengan minat besar dalam pengembangan
+                    website, pemrograman, dan desain UI/UX. Memiliki pengalaman dalam pengembangan aplikasi berbasis
+                    web melalui proyek akademik maupun pengalaman kerja. Terbiasa menggunakan HTML, CSS, JavaScript,
+                    Laravel, WordPress, serta memahami pengembangan website responsif dan user-friendly. </p>
                 <div class="socials">
                     <a href="https://github.com/Oyaannn"><i class="fa-brands fa-github"></i></a>
                     <a href="http://wa.me/6283891464242"><i class="fa-brands fa-whatsapp"></i></a>
@@ -78,9 +77,9 @@
         </div>
     </section>
 
-    <section id="project">
+    <section id="projects">
         <div class="container">
-            <h2 class="section-title reveal">Project</h2>
+            <h2 class="section-title reveal">Projects</h2>
             <div class="projects-grid" id="projectsGrid"></div>
         </div>
     </section>
@@ -91,14 +90,12 @@
             <div class="timeline">
                 <div class="exp-card reveal">
                     <div class="exp-date">Februari — Juni 2026</div>
-                    <h3>Junior Programmer</h3>
+                    <h3>Programmer</h3>
                     <div class="exp-company">PT Nusa Putra Edu Global · Sukabumi</div>
                     <ul>
-                        <li>Membantu pengembangan website perusahaan menggunakan framework Laravel.</li>
-                        <li>Mengembangkan dan menyesuaikan fitur website sesuai kebutuhan perusahaan.</li>
-                        <li>Melakukan maintenance dan perbaikan tampilan website agar lebih responsif dan user friendly.
-                        </li>
-                        <li>Mengoptimalkan dan menyesuaikan tampilan website menggunakan WordPress.</li>
+                        <li>Menyelesaikan website SMK Plus Nusaputra menggunakan framework Laravel.</li>
+                        <li>Melakukan maintenance dan perbaikan tampilan website agar lebih responsif dan user-friendly.</li>
+                        <li>Mengembangkan dan menyesuaikan tampilan beberapa website menggunakan WordPress.</li>
                         <li>Mengelola konten website agar informasi tersampaikan dengan baik dan terstruktur.</li>
                     </ul>
                 </div>
@@ -107,12 +104,10 @@
                     <h3>Social Media Creative</h3>
                     <div class="exp-company">INFOSMI · Sukabumi</div>
                     <ul>
-                        <li>Merancang ide konten kreatif untuk kebutuhan media sosial Instagram.</li>
+                        <li>Merancang ide konten kreatif untuk di platform media sosial Instagram.</li>
                         <li>Menyusun caption yang informatif, persuasif, dan sesuai dengan karakter audiens.</li>
-                        <li>Mendesain konten menggunakan tools visual editing untuk campaign harian.</li>
-                        <li>Menganalisis performa konten melalui insight media sosial untuk meningkatkan engagement.
-                        </li>
-                        <li>Berkolaborasi dengan tim dalam perencanaan strategi konten.</li>
+                        <li>Menjadwalkan dan mengunggah konten sesuai dengan content plan yang telah ditentukan.</li>
+                        <li>Menganalisis performa konten melalui insight media sosial untuk meningkatkan engagement.</li>
                     </ul>
                 </div>
                 <div class="exp-card reveal">
@@ -121,8 +116,8 @@
                     <div class="exp-company">PT Tera Data Indonusa · Jakarta Timur</div>
                     <ul>
                         <li>Melakukan perakitan perangkat laptop dari PC sesuai standar perusahaan.</li>
-                        <li>Melaksanakan quality control untuk memastikan standar komponen sesuai.</li>
-                        <li>Melakukan packing produk laptop dengan rapi dan sesuai prosedur.</li>
+                        <li>Melaksanakan Quality Control (QC) terhadap sistem dan komponen laptop.</li>
+                        <li>Melakukan packing produk laptop dengan rapi dan sesuai prosedur sebelum distribusi.</li>
                         <li>Bekerja sama dengan tim untuk meningkatkan produktivitas kegiatan produksi.</li>
                     </ul>
                 </div>
@@ -151,7 +146,7 @@
             <h2 class="section-title reveal">Contact</h2>
             <div class="contact-grid">
                 <div class="contact-left reveal">
-                    <h2>Hire Me to Unlock<br>Your Full Potential!</h2>
+                    <h2>Hire Me to Unlock<br>My Full Potential!</h2>
                     <p>Butuh loker banget ini, jadi pliss hire yaa semua proyek di gas asal ada cuan nya. Soalnya pengen
                         beli Civic Type R, biar blarr blarr.</p>
                     <div class="info-grid">
@@ -170,13 +165,18 @@
                     </div>
                 </div>
                 <form class="contact-form reveal" id="contactForm">
-                    <div class="form-group"><label>Nama</label><input type="text" id="name"
+                    <input type="hidden" name="_subject" value="Pesan Baru dari Portfolio Oyan">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" class="honeypot-field" tabindex="-1" autocomplete="off">
+                    <div class="form-group"><label>Nama</label><input type="text" id="name" name="name"
                             placeholder="Nama lengkap kamu" required></div>
-                    <div class="form-group"><label>Email</label><input type="email" id="email"
+                    <div class="form-group"><label>Email</label><input type="email" id="email" name="email"
                             placeholder="email@gmail.com" required></div>
-                    <div class="form-group"><label>Pesan</label><textarea id="message"
+                    <div class="form-group"><label>Pesan</label><textarea id="message" name="message"
                             placeholder="Tulis pesan kamu disini.." required></textarea></div>
-                    <button class="btn" type="submit">Kirim Pesan</button>
+                    <button class="btn" type="submit" id="contactSubmit">Kirim Pesan</button>
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </div>
@@ -221,5 +221,4 @@
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>

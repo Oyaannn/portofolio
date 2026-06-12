@@ -42,7 +42,7 @@ const projects = [
         desc: 'Website perpustakaan digital yang dikembangkan untuk membantu pengelolaan data buku, anggota, peminjaman, dan pengembalian secara lebih terstruktur.',
         stack: ['PHP', 'MySQL', 'Bootstrap'],
         live: '#',
-        github: '#'
+        github: 'https://github.com/Oyaannn/PerpustakaanDigital'
     },
     {
         title: 'Personal Portofolio Website',
@@ -52,6 +52,15 @@ const projects = [
         stack: ['HTML', 'CSS', 'JavaScript'],
         live: 'https://oyaannn.github.io/portofolio/',
         github: 'https://github.com/Oyaannn/portofolio'
+    },
+    {
+        title: 'Social Media Management @sukabumitoday',
+        cat: 'Social Media Creative',
+        img: 'assets/project/smc.png',
+        desc: 'Pengelolaan konten Instagram @sukabumitoday selama bekerja sebagai Social Media Creative di INFOSMI, mencakup riset informasi, penulisan headline dan caption, serta pembuatan desain carousel berita lokal Sukabumi.',
+        stack: ['Instagram', 'Capcut', 'Figma'],
+        live: 'https://www.instagram.com/sukabumitoday/',
+        github: '#'
     }
 ];
 
@@ -388,22 +397,53 @@ function initCertificateModal() {
 
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
+    const submitButton = document.getElementById('contactSubmit');
+    const formStatus = document.getElementById('formStatus');
+    const formEndpoint = 'https://formsubmit.co/ajax/mirpanarroyan15@gmail.com';
 
-    if (!contactForm) return;
+    if (!contactForm || !submitButton || !formStatus) return;
 
-    contactForm.addEventListener('submit', (event) => {
+    const setFormStatus = (message, type = '') => {
+        formStatus.textContent = message;
+        formStatus.className = `form-status ${type}`.trim();
+    };
+
+    contactForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
+        if (!contactForm.checkValidity()) {
+            contactForm.reportValidity();
+            return;
+        }
 
-        const subject = encodeURIComponent(`Pesan dari Portfolio - ${name}`);
-        const body = encodeURIComponent(
-            `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`
-        );
+        submitButton.disabled = true;
+        submitButton.textContent = 'Mengirim...';
+        setFormStatus('Pesan sedang dikirim...');
 
-        window.location.href = `mailto:mirpanarroyan15@gmail.com?subject=${subject}&body=${body}`;
+        try {
+            const response = await fetch(formEndpoint, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: {
+                    Accept: 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Gagal mengirim pesan.');
+            }
+
+            contactForm.reset();
+            setFormStatus('Pesan berhasil dikirim. Terima kasih, saya akan segera membalasnya.', 'success');
+        } catch (error) {
+            setFormStatus(
+                'Pesan belum terkirim. Coba lagi beberapa saat, atau hubungi langsung ke mirpanarroyan15@gmail.com.',
+                'error'
+            );
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Kirim Pesan';
+        }
     });
 }
 
